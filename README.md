@@ -3,7 +3,7 @@ BeaconDemo
 
 iBeacons demo app for my conference talk, "I, Beacon"
 
-I have 10 iBeacons
+I have 10 iBeacons that I will have on hand at the conference.
 
 <table><tr><th>Model</th><th>Proximity UUID</th><th>Major</th><th>Minor</th></tr>
 <tr><td>Bleu Station</td><td>94711E57-F8A7-4A2E-A485-649898B9C14A</td><td>1</td><td>1 – 3</td></tr>
