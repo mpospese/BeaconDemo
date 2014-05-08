@@ -22,6 +22,8 @@
 		80079C7F191B829600345829 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80079C5E191B829600345829 /* UIKit.framework */; };
 		80079C87191B829600345829 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80079C85191B829600345829 /* InfoPlist.strings */; };
 		80079C89191B829600345829 /* BeaconDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80079C88191B829600345829 /* BeaconDemoTests.m */; };
+		80079C94191B859C00345829 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 80079C92191B859C00345829 /* LICENSE */; };
+		80079C95191B859C00345829 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80079C93191B859C00345829 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		80079C84191B829600345829 /* BeaconDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeaconDemoTests-Info.plist"; sourceTree = "<group>"; };
 		80079C86191B829600345829 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		80079C88191B829600345829 /* BeaconDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeaconDemoTests.m; sourceTree = "<group>"; };
+		80079C92191B859C00345829 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		80079C93191B859C00345829 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		80079C4E191B829600345829 = {
 			isa = PBXGroup;
 			children = (
+				80079C92191B859C00345829 /* LICENSE */,
+				80079C93191B859C00345829 /* README.md */,
 				80079C60191B829600345829 /* BeaconDemo */,
 				80079C82191B829600345829 /* BeaconDemoTests */,
 				80079C59191B829600345829 /* Frameworks */,
@@ -232,10 +238,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80079C95191B859C00345829 /* README.md in Resources */,
 				80079C71191B829600345829 /* Main_iPad.storyboard in Resources */,
 				80079C76191B829600345829 /* Images.xcassets in Resources */,
 				80079C6E191B829600345829 /* Main_iPhone.storyboard in Resources */,
 				80079C65191B829600345829 /* InfoPlist.strings in Resources */,
+				80079C94191B859C00345829 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
