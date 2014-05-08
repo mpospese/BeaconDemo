@@ -24,6 +24,10 @@
 		80079C89191B829600345829 /* BeaconDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80079C88191B829600345829 /* BeaconDemoTests.m */; };
 		80079C94191B859C00345829 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 80079C92191B859C00345829 /* LICENSE */; };
 		80079C95191B859C00345829 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80079C93191B859C00345829 /* README.md */; };
+		80079C99191B8BE600345829 /* CMSBeaconDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 80079C98191B8BE600345829 /* CMSBeaconDefaults.m */; };
+		8018A442191BEE2B002B9BEA /* CMSBeaconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8018A441191BEE2B002B9BEA /* CMSBeaconView.m */; };
+		8018A445191BEE42002B9BEA /* CMSBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8018A444191BEE42002B9BEA /* CMSBeacon.m */; };
+		8018A449191C3F74002B9BEA /* PigSnort.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8018A448191C3F74002B9BEA /* PigSnort.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,14 @@
 		80079C88191B829600345829 /* BeaconDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeaconDemoTests.m; sourceTree = "<group>"; };
 		80079C92191B859C00345829 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		80079C93191B859C00345829 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		80079C96191B8BBA00345829 /* CMSBeaconEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMSBeaconEnums.h; sourceTree = "<group>"; };
+		80079C97191B8BE600345829 /* CMSBeaconDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSBeaconDefaults.h; sourceTree = "<group>"; };
+		80079C98191B8BE600345829 /* CMSBeaconDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSBeaconDefaults.m; sourceTree = "<group>"; };
+		8018A440191BEE2B002B9BEA /* CMSBeaconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSBeaconView.h; sourceTree = "<group>"; };
+		8018A441191BEE2B002B9BEA /* CMSBeaconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSBeaconView.m; sourceTree = "<group>"; };
+		8018A443191BEE42002B9BEA /* CMSBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSBeacon.h; sourceTree = "<group>"; };
+		8018A444191BEE42002B9BEA /* CMSBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSBeacon.m; sourceTree = "<group>"; };
+		8018A448191C3F74002B9BEA /* PigSnort.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PigSnort.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +138,16 @@
 				80079C6F191B829600345829 /* Main_iPad.storyboard */,
 				80079C72191B829600345829 /* CMSViewController.h */,
 				80079C73191B829600345829 /* CMSViewController.m */,
+				80079C96191B8BBA00345829 /* CMSBeaconEnums.h */,
+				8018A440191BEE2B002B9BEA /* CMSBeaconView.h */,
+				8018A441191BEE2B002B9BEA /* CMSBeaconView.m */,
 				80079C75191B829600345829 /* Images.xcassets */,
+				8018A448191C3F74002B9BEA /* PigSnort.mp3 */,
 				80079C61191B829600345829 /* Supporting Files */,
+				80079C97191B8BE600345829 /* CMSBeaconDefaults.h */,
+				80079C98191B8BE600345829 /* CMSBeaconDefaults.m */,
+				8018A443191BEE42002B9BEA /* CMSBeacon.h */,
+				8018A444191BEE42002B9BEA /* CMSBeacon.m */,
 			);
 			path = BeaconDemo;
 			sourceTree = "<group>";
@@ -244,6 +264,7 @@
 				80079C6E191B829600345829 /* Main_iPhone.storyboard in Resources */,
 				80079C65191B829600345829 /* InfoPlist.strings in Resources */,
 				80079C94191B859C00345829 /* LICENSE in Resources */,
+				8018A449191C3F74002B9BEA /* PigSnort.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80079C6B191B829600345829 /* CMSAppDelegate.m in Sources */,
+				8018A445191BEE42002B9BEA /* CMSBeacon.m in Sources */,
+				8018A442191BEE2B002B9BEA /* CMSBeaconView.m in Sources */,
 				80079C74191B829600345829 /* CMSViewController.m in Sources */,
+				80079C99191B8BE600345829 /* CMSBeaconDefaults.m in Sources */,
 				80079C67191B829600345829 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +428,7 @@
 				INFOPLIST_FILE = "BeaconDemo/BeaconDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -418,6 +443,7 @@
 				INFOPLIST_FILE = "BeaconDemo/BeaconDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -481,6 +507,7 @@
 				80079C8E191B829600345829 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80079C8F191B829600345829 /* Build configuration list for PBXNativeTarget "BeaconDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +516,7 @@
 				80079C91191B829600345829 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
