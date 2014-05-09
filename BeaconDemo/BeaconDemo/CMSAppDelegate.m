@@ -9,10 +9,12 @@
 #import "CMSAppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 #import "CMSBeaconDefaults.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface CMSAppDelegate()<CLLocationManagerDelegate>
 
 @property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) SystemSoundID pigSoundID;
 
 @end
 
@@ -28,21 +30,21 @@
     CLBeaconRegion *foundRegion;
     CLBeaconRegion *baconRegion = [CMSBeaconDefaults baconRegion];
     foundRegion = [self.locationManager.monitoredRegions member:baconRegion];
-    if (YES)//!foundRegion)
+    if (!foundRegion)
     {
         [self.locationManager startMonitoringForRegion:baconRegion];
     }
     
     CLBeaconRegion *registrationRegion = [CMSBeaconDefaults registrationRegion];
     foundRegion = [self.locationManager.monitoredRegions member:registrationRegion];
-    if (YES)//!foundRegion)
+    if (!foundRegion)
     {
         [self.locationManager startMonitoringForRegion:registrationRegion];
     }
     
     CLBeaconRegion *sessionRegion = [CMSBeaconDefaults sessionRegion];
     foundRegion = [self.locationManager.monitoredRegions member:sessionRegion];
-    if (YES)//!foundRegion)
+    if (!foundRegion)
     {
         [self.locationManager startMonitoringForRegion:sessionRegion];
     }
@@ -80,8 +82,10 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     // If the application is in the foreground, we will notify the user of the region's state via an alert.
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:notification.alertBody message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    BOOL playSound = [[[notification userInfo] objectForKey:@"playSound"] boolValue];
+    
+    if (playSound)
+        AudioServicesPlaySystemSound([self pigSoundID]);
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -101,6 +105,12 @@
         if (state == CLRegionStateInside)
         {
             notification.alertBody = @"You've got bacon!";
+            notification.soundName = @"PigSnort.mp3";
+            [notification setUserInfo:@{@"playSound" : @YES}];
+        }
+        else if (state == CLRegionStateOutside)
+        {
+            notification.alertBody = @"Sadly, away from bacon.";
             notification.soundName = @"PigSnort.mp3";
         }
     }
@@ -123,14 +133,28 @@
     
     [beacon setState:state];
 
-    if (!beacon || state != CLRegionStateInside)
+    if (!notification.alertBody)
     {
         return;
     }
     
+    
     // If the application is in the foreground, it will get a callback to application:didReceiveLocalNotification:.
     // If its not, iOS will display the notification to the user.
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+#pragma mark - Sounds
+
+- (SystemSoundID)pigSoundID
+{
+    if (!_pigSoundID)
+    {
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"PigSnort" ofType:@"mp3"];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)([NSURL fileURLWithPath:soundPath]), &_pigSoundID);
+    }
+    
+    return _pigSoundID;
 }
 
 @end
