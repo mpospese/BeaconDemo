@@ -12,3 +12,8 @@ I have 10 iBeacons that I will have on hand at the conference.
 <tr><td>Estimote</td><td>B9407F30-F5F8-466E-AFF9-25556B57FE6D</td><td>4</td><td>8 – 10</td></tr>
 </table>
 
+App Icon and Launch Image based on ArtBits image by [Glyphish](http://glyphish.com).
+
+Pig sound recorded by Caroline Ford.  
+  
+
