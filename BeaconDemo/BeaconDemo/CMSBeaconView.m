@@ -20,7 +20,7 @@
 
 @implementation CMSBeaconView
 
-static int _KVOStateContext;
+//static int _KVOStateContext;
 static int _KVOProximityContext;
 static int _KVOLastSeenContext;
 
