@@ -65,18 +65,22 @@ const CGFloat kHeaderHeight = 40.f;
 {
     [super viewDidAppear:animated];
     
-    [self.locationManager startRangingBeaconsInRegion:[CMSBeaconDefaults baconRegion]];
-    [self.locationManager startRangingBeaconsInRegion:[CMSBeaconDefaults registrationRegion]];
-    [self.locationManager startRangingBeaconsInRegion:[CMSBeaconDefaults sessionRegion]];
+    NSArray *regions = [CMSBeaconDefaults regions];
+    for (CLBeaconRegion *region in regions)
+    {
+        [self.locationManager startRangingBeaconsInRegion:region];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     
-    [self.locationManager stopRangingBeaconsInRegion:[CMSBeaconDefaults baconRegion]];
-    [self.locationManager stopRangingBeaconsInRegion:[CMSBeaconDefaults registrationRegion]];
-    [self.locationManager stopRangingBeaconsInRegion:[CMSBeaconDefaults sessionRegion]];
+    NSArray *regions = [CMSBeaconDefaults regions];
+    for (CLBeaconRegion *region in regions)
+    {
+        [self.locationManager stopRangingBeaconsInRegion:region];
+    }
 }
 
 - (void)didReceiveMemoryWarning

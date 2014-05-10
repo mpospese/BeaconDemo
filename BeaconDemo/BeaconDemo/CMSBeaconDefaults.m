@@ -116,4 +116,9 @@ NSString * const kSessionRegionIdentifier = @"com.crazymilksoftware.sessionRegio
     return _sessionBeacon;
 }
 
++ (NSArray *)regions
+{
+    return @[[self baconRegion], [self registrationRegion], [self sessionRegion]];
+}
+
 @end

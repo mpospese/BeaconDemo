@@ -24,6 +24,7 @@ extern NSString * const kSessionRegionIdentifier;
 + (CLBeaconRegion *)baconRegion;
 + (CLBeaconRegion *)registrationRegion;
 + (CLBeaconRegion *)sessionRegion;
++ (NSArray *)regions;
 
 + (CMSBeacon *)baconBeacon;
 + (CMSBeacon *)registrationBeacon;

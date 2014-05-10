@@ -28,25 +28,15 @@
     self.locationManager.delegate = self;
 
     CLBeaconRegion *foundRegion;
-    CLBeaconRegion *baconRegion = [CMSBeaconDefaults baconRegion];
-    foundRegion = [self.locationManager.monitoredRegions member:baconRegion];
-    if (!foundRegion)
-    {
-        [self.locationManager startMonitoringForRegion:baconRegion];
-    }
+    NSArray *regions = [CMSBeaconDefaults regions];
     
-    CLBeaconRegion *registrationRegion = [CMSBeaconDefaults registrationRegion];
-    foundRegion = [self.locationManager.monitoredRegions member:registrationRegion];
-    if (!foundRegion)
+    for (CLBeaconRegion *region in regions)
     {
-        [self.locationManager startMonitoringForRegion:registrationRegion];
-    }
-    
-    CLBeaconRegion *sessionRegion = [CMSBeaconDefaults sessionRegion];
-    foundRegion = [self.locationManager.monitoredRegions member:sessionRegion];
-    if (!foundRegion)
-    {
-        [self.locationManager startMonitoringForRegion:sessionRegion];
+        foundRegion = [self.locationManager.monitoredRegions member:region];
+        if (!foundRegion)
+        {
+            [self.locationManager startMonitoringForRegion:region];
+        }
     }
     
     return YES;
