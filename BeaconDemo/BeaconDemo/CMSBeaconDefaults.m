@@ -8,6 +8,10 @@
 
 #import "CMSBeaconDefaults.h"
 
+NSString * const kBaconRegionIdentifier = @"com.crazymilksoftware.baconRegion";
+NSString * const kRegistrationRegionIdentifier = @"com.crazymilksoftware.registrationRegion";
+NSString * const kSessionRegionIdentifier = @"com.crazymilksoftware.sessionRegion";
+
 @implementation CMSBeaconDefaults
 
 + (NSUUID *)defaultProximityUUID;
@@ -43,13 +47,13 @@
     return _roximityProximityUUID;
 }
 
-// The Bacon beacon is the Cocktail Mint-colored estimote (Major: 4, Minor: 8)
+// The Bacon beacon is the Mint Cocktail-colored estimote (Major: 4, Minor: 8)
 + (CLBeaconRegion *)baconRegion;
 {
     static CLBeaconRegion *_baconRegion = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _baconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[self estimoteProximityUUID] major:4 minor:8 identifier:@"com.crazymilksoftware.baconRegion"];
+        _baconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[self estimoteProximityUUID] major:4 minor:8 identifier:kBaconRegionIdentifier];
     });
     
     return _baconRegion;
@@ -66,13 +70,13 @@
     return _baconBeacon;
 }
 
-// The Registration beacon is the Cool Marshmallow-colored estimote (Major: 4, Minor: 9)
+// The Registration beacon is the Icy Marshmallow-colored estimote (Major: 4, Minor: 9)
 + (CLBeaconRegion *)registrationRegion;
 {
     static CLBeaconRegion *_registrationRegion = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _registrationRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[self estimoteProximityUUID] major:4 minor:9 identifier:@"com.crazymilksoftware.registrationRegion"];
+        _registrationRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[self estimoteProximityUUID] major:4 minor:9 identifier:kRegistrationRegionIdentifier];
     });
     
     return _registrationRegion;
@@ -95,7 +99,7 @@
     static CLBeaconRegion *_sessionRegion = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sessionRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[self defaultProximityUUID] major:1 identifier:@"com.crazymilksoftware.sessionRegion"];
+        _sessionRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[self defaultProximityUUID] major:1 identifier:kSessionRegionIdentifier];
     });
     
     return _sessionRegion;

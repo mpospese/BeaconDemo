@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "CMSBeacon.h"
 
+extern NSString * const kBaconRegionIdentifier;
+extern NSString * const kRegistrationRegionIdentifier;
+extern NSString * const kSessionRegionIdentifier;
+
 @interface CMSBeaconDefaults : NSObject
 
 + (NSUUID *)defaultProximityUUID;

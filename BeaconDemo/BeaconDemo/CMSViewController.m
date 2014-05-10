@@ -96,19 +96,21 @@ const CGFloat kHeaderHeight = 40.f;
 {
     CMSBeacon *beacon = nil;
     
-    if ([region isEqual:[CMSBeaconDefaults baconRegion]])
+    if ([region.identifier isEqualToString:kBaconRegionIdentifier])
     {
         beacon = [CMSBeaconDefaults baconBeacon];
     }
-    else if ([region isEqual:[CMSBeaconDefaults registrationRegion]])
+    else if ([region.identifier isEqualToString:kRegistrationRegionIdentifier])
     {
         beacon = [CMSBeaconDefaults registrationBeacon];
     }
-    else if ([region isEqual:[CMSBeaconDefaults sessionRegion]])
+    else if ([region.identifier isEqualToString:kSessionRegionIdentifier])
     {
         beacon = [CMSBeaconDefaults sessionBeacon];
     }
     
+    // There may be multiple beacons in this region,
+    // we will report proximity as the closest of all reported beacons
     CLProximity closest = CLProximityUnknown;
     for (CLBeacon *beacon in beacons)
     {

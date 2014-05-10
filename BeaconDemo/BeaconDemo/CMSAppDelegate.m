@@ -72,7 +72,7 @@
     
     CMSBeacon *beacon = nil;
     
-    if ([region isEqual:[CMSBeaconDefaults baconRegion]])
+    if ([region.identifier isEqualToString:kBaconRegionIdentifier])
     {
         beacon = [CMSBeaconDefaults baconBeacon];
         if (state == CLRegionStateInside)
@@ -87,7 +87,7 @@
             notification.soundName = @"PigSnort.mp3";
         }
     }
-    else if ([region isEqual:[CMSBeaconDefaults registrationRegion]])
+    else if ([region.identifier isEqualToString:kRegistrationRegionIdentifier])
     {
         beacon = [CMSBeaconDefaults registrationBeacon];
         if (state == CLRegionStateInside)
@@ -95,7 +95,7 @@
             notification.alertBody = @"Welcome to CocoaConf Raleigh!";
         }
     }
-    else if ([region isEqual:[CMSBeaconDefaults sessionRegion]])
+    else if ([region.identifier isEqualToString:kSessionRegionIdentifier])
     {
         beacon = [CMSBeaconDefaults sessionBeacon];
         if (state == CLRegionStateInside)
